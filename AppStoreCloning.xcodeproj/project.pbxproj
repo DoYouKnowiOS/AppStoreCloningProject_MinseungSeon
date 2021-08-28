@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		9E8F704126D213A500613B9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8F703F26D213A500613B9B /* LaunchScreen.storyboard */; };
 		9EE1C46A26DA186E0074E680 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C46926DA186E0074E680 /* SearchResult.swift */; };
 		9EE1C46E26DA1C8E0074E680 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C46D26DA1C8E0074E680 /* SearchViewController.swift */; };
+		9EE1C47126DA219A0074E680 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C47026DA219A0074E680 /* Request.swift */; };
+		9EE1C47426DA24060074E680 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C47326DA24060074E680 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		9E8F704226D213A500613B9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EE1C46926DA186E0074E680 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		9EE1C46D26DA1C8E0074E680 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9EE1C47026DA219A0074E680 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		9EE1C47326DA24060074E680 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D412B24F294BF0AF74B6D4E1 /* Pods_AppStoreCloning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreCloning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				9EE1C46826DA184C0074E680 /* Response */,
+				9EE1C47026DA219A0074E680 /* Request.swift */,
+				9EE1C47326DA24060074E680 /* APIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -115,9 +121,17 @@
 		9EE1C46C26DA1C5C0074E680 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				9EE1C46D26DA1C8E0074E680 /* SearchViewController.swift */,
+				9EE1C46F26DA21220074E680 /* ViewController */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		9EE1C46F26DA21220074E680 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9EE1C46D26DA1C8E0074E680 /* SearchViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CD8D6FEE81233B281DFAF517 /* Pods */ = {
@@ -126,7 +140,6 @@
 				298E2A23AB2F37AC947188F0 /* Pods-AppStoreCloning.debug.xcconfig */,
 				1FD77074D294602D226CE9AD /* Pods-AppStoreCloning.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -245,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EE1C46E26DA1C8E0074E680 /* SearchViewController.swift in Sources */,
+				9EE1C47426DA24060074E680 /* APIService.swift in Sources */,
+				9EE1C47126DA219A0074E680 /* Request.swift in Sources */,
 				9E8F703926D213A200613B9B /* ViewController.swift in Sources */,
 				9E8F703526D213A200613B9B /* AppDelegate.swift in Sources */,
 				9EE1C46A26DA186E0074E680 /* SearchResult.swift in Sources */,
