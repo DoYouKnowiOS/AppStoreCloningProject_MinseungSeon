@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: UIViewController {
+    
     let searchViewModel = SearchViewModel()
     let disposeBag = DisposeBag()
     let testLabel = UILabel()
@@ -23,7 +24,7 @@ class SearchViewController: UIViewController {
     
     func bindUI() {
         searchViewModel.output.searchResult
-            .map { "\($0.resultCount)" }
+            .map { "\($0.resultCount)\n\($0.results.description)" }
             .asDriver(onErrorJustReturn: "결과 없음")
             .drive(testLabel.rx.text)
             .disposed(by: disposeBag)
@@ -34,7 +35,11 @@ class SearchViewController: UIViewController {
         view.addSubview(testLabel)
         let safeArea = view.safeAreaLayoutGuide
         let leadingConstraint = testLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16)
+        let topConstarint = testLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 50)
         testLabel.translatesAutoresizingMaskIntoConstraints = false
+        testLabel.numberOfLines = 0
+        leadingConstraint.isActive = true
+        topConstarint.isActive = true
     }
 }
 
@@ -53,9 +58,6 @@ struct ViewControllerRepresentable: UIViewControllerRepresentable {
 @available(iOS 13.0.0, *)
 struct ViewPreview: PreviewProvider {
     static var previews: some View {
-        Group {
             ViewControllerRepresentable()
-            ViewControllerRepresentable()
-        }
     }
 }

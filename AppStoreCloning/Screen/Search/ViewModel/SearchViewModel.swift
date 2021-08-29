@@ -10,8 +10,8 @@ import RxSwift
 import RxCocoa
 
 class SearchViewModel: ViewModelType {
-    struct Input {}
     
+    struct Input {}
     struct Output {
         let searchResult = BehaviorRelay<SearchResult>(value: SearchResult(resultCount: 0, results: []))
     }
@@ -28,7 +28,6 @@ class SearchViewModel: ViewModelType {
     }
     
     func fetchSearchResult() {
-        print("실행")
         do {
             try service.getSearchResult().subscribe(
                 onNext: { [weak self] in
