@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 
 class SearchViewModel: ViewModelType {
-    
     struct Input {}
     struct Output {
         let searchResult = BehaviorRelay<SearchResult>(value: SearchResult(resultCount: 0, results: []))

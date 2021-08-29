@@ -20,7 +20,6 @@ class APIService {
         URLQueryItem(name: "country", value: "kr"),
         URLQueryItem(name: "media", value: "software")
     ]
-    print(url.url)
     var request = URLRequest(url: url.url!)
     request.httpMethod = "GET"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")

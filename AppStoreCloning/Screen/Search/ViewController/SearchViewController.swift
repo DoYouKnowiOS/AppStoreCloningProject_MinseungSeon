@@ -11,10 +11,14 @@ import RxCocoa
 
 class SearchViewController: UIViewController {
     
+    // MARK: Variable
+    
     let searchViewModel = SearchViewModel()
     let disposeBag = DisposeBag()
     let testLabel = UILabel()
 
+    // MARK: Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchViewModel.fetchSearchResult()
@@ -22,6 +26,8 @@ class SearchViewController: UIViewController {
         bindUI()
     }
     
+    // MARK: Function
+
     func bindUI() {
         searchViewModel.output.searchResult
             .map { "\($0.resultCount)\n\($0.results.description)" }
