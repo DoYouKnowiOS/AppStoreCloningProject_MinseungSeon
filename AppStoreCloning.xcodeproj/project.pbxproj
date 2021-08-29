@@ -19,6 +19,7 @@
 		9EE1C47126DA219A0074E680 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C47026DA219A0074E680 /* Request.swift */; };
 		9EE1C47426DA24060074E680 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C47326DA24060074E680 /* APIService.swift */; };
 		9EE1C47826DBA1C70074E680 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C47726DBA1C70074E680 /* ViewModelType.swift */; };
+		9EE1C47B26DBA2340074E680 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1C47A26DBA2340074E680 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		9EE1C47026DA219A0074E680 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		9EE1C47326DA24060074E680 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		9EE1C47726DBA1C70074E680 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		9EE1C47A26DBA2340074E680 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D412B24F294BF0AF74B6D4E1 /* Pods_AppStoreCloning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreCloning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 		9EE1C46C26DA1C5C0074E680 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				9EE1C47926DBA1F90074E680 /* ViewModel */,
 				9EE1C46F26DA21220074E680 /* ViewController */,
 			);
 			path = Search;
@@ -151,6 +154,14 @@
 				9EE1C47726DBA1C70074E680 /* ViewModelType.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9EE1C47926DBA1F90074E680 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9EE1C47A26DBA2340074E680 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CD8D6FEE81233B281DFAF517 /* Pods */ = {
@@ -282,6 +293,7 @@
 				9E8F703926D213A200613B9B /* ViewController.swift in Sources */,
 				9EE1C47826DBA1C70074E680 /* ViewModelType.swift in Sources */,
 				9E8F703526D213A200613B9B /* AppDelegate.swift in Sources */,
+				9EE1C47B26DBA2340074E680 /* SearchViewModel.swift in Sources */,
 				9EE1C46A26DA186E0074E680 /* SearchResult.swift in Sources */,
 				9E8F703726D213A200613B9B /* SceneDelegate.swift in Sources */,
 			);

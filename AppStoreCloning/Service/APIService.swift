@@ -12,6 +12,7 @@ import RxSwift
 class APIService {
   static var shared = APIService()
   lazy var requestObservable = RequestObservable(config: .default)
+    
   func getSearchResult() throws -> Observable<SearchResult> {
     var url = URLComponents(string: "https://itunes.apple.com/search")!
     url.queryItems = [

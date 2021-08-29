@@ -10,43 +10,32 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: UIViewController {
-    var response: SearchResult?
+    let searchViewModel = SearchViewModel()
     let disposeBag = DisposeBag()
+    let testLabel = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let testLabel = UILabel()
+        searchViewModel.fetchSearchResult()
+        setLayout()
+        bindUI()
+    }
+    
+    func bindUI() {
+        searchViewModel.output.searchResult
+            .map { "\($0.resultCount)" }
+            .asDriver(onErrorJustReturn: "결과 없음")
+            .drive(testLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    func setLayout() {
         testLabel.text = "결과:"
-
         view.addSubview(testLabel)
         let safeArea = view.safeAreaLayoutGuide
         let leadingConstraint = testLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16)
-        
         testLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        print("실행")
-        let service = APIService.shared
-        do {
-            try service.getSearchResult().subscribe(
-                onNext: { result in
-                    self.response = result
-                    //MARK: display
-                    if let response = self.response {
-                        print(response)
-                        
-                    }
-                },
-                onError: { error in
-                    print(String(describing: error))
-                },
-                onCompleted: {
-                    print("Completed event.")
-                }).disposed(by: disposeBag)
-        }
-        catch{
-        }
     }
-    
 }
 
 import SwiftUI
