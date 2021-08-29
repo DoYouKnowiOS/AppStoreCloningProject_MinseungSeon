@@ -20,12 +20,12 @@ struct Result: Codable {
     let artistViewURL: String
     let isGameCenterEnabled: Bool
     let supportedDevices, advisories: [String]
-    let kind: Kind
-    let features: [Feature]
+    let kind: String
+    let features: [String]
     let minimumOSVersion, trackCensoredName: String
     let languageCodesISO2A: [String]
     let fileSizeBytes: String
-    let formattedPrice: FormattedPrice
+    let formattedPrice: String
     let contentAdvisoryRating: Rating
     let averageUserRatingForCurrentVersion: Double
     let userRatingCountForCurrentVersion: Int
@@ -35,20 +35,20 @@ struct Result: Codable {
     let trackID: Int
     let trackName: String
     let primaryGenreID: Int
-    let releaseDate: Date
+    let releaseDate: String // Date 형색이 아니라서 에러났었음 Date() -> String
     let sellerName: String
-    let primaryGenreName: PrimaryGenreName
+    let primaryGenreName: String
     let isVppDeviceBasedLicensingEnabled: Bool
-    let currentVersionReleaseDate: Date
+    let currentVersionReleaseDate: String
     let releaseNotes: String
     let averageUserRating: Double
     let currency: Currency
     let version: String
-    let wrapperType: Kind
+    let wrapperType: String
     let resultDescription: String
     let artistID: Int
     let artistName: String
-    let genres: [Genre]
+    let genres: [String]
     let price: Int
     let bundleID: String
     let userRatingCount: Int

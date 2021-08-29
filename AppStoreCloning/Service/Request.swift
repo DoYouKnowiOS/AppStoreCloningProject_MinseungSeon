@@ -15,8 +15,7 @@ public class RequestObservable {
     private lazy var jsonDecoder = JSONDecoder()
     private var urlSession: URLSession
     public init(config:URLSessionConfiguration) {
-        urlSession = URLSession(configuration:
-                                    URLSessionConfiguration.default)
+        urlSession = URLSession(configuration: URLSessionConfiguration.default)
     }
     
     //MARK: function for URLSession takes
