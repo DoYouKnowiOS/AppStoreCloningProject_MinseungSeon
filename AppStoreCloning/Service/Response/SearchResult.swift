@@ -15,7 +15,7 @@ struct SearchResult: Codable {
 // MARK: - Result
 struct Result: Codable {
     let screenshotUrls, ipadScreenshotUrls: [String]
-    let appletvScreenshotUrls: [JSONAny]
+    let appletvScreenshotUrls: [String]
     let artworkUrl60, artworkUrl512, artworkUrl100: String
     let artistViewURL: String
     let isGameCenterEnabled: Bool
@@ -85,41 +85,6 @@ enum Rating: String, Codable {
 
 enum Currency: String, Codable {
     case krw = "KRW"
-}
-
-enum Feature: String, Codable {
-    case gameCenter = "gameCenter"
-    case iosUniversal = "iosUniversal"
-}
-
-enum FormattedPrice: String, Codable {
-    case 무료 = "무료"
-}
-
-enum Genre: String, Codable {
-    case 건강및피트니스 = "건강 및 피트니스"
-    case 게임 = "게임"
-    case 롤플레잉 = "롤플레잉"
-    case 스포츠 = "스포츠"
-    case 시뮬레이션 = "시뮬레이션"
-    case 액션 = "액션"
-    case 어드벤처 = "어드벤처"
-    case 엔터테인먼트 = "엔터테인먼트"
-    case 의료 = "의료"
-    case 전략 = "전략"
-    case 캐주얼 = "캐주얼"
-    case 퍼즐 = "퍼즐"
-}
-
-enum Kind: String, Codable {
-    case software = "software"
-}
-
-enum PrimaryGenreName: String, Codable {
-    case entertainment = "Entertainment"
-    case games = "Games"
-    case healthFitness = "Health & Fitness"
-    case medical = "Medical"
 }
 
 // MARK: - Encode/decode helpers

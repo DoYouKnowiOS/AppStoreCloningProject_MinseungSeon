@@ -10,15 +10,14 @@ import RxCocoa
 import RxSwift
 
 class APIService {
-  static var shared = APIService()
   lazy var requestObservable = RequestObservable(config: .default)
     
-  func getSearchResult() throws -> Observable<SearchResult> {
+    func getSearchResult(term: String, country: String, media: String) throws -> Observable<SearchResult> {
     var url = URLComponents(string: "https://itunes.apple.com/search")!
     url.queryItems = [
-        URLQueryItem(name: "term", value: "카카오톡"),
-        URLQueryItem(name: "country", value: "kr"),
-        URLQueryItem(name: "media", value: "software")
+        URLQueryItem(name: "term", value: term),
+        URLQueryItem(name: "country", value: country),
+        URLQueryItem(name: "media", value: media)
     ]
     var request = URLRequest(url: url.url!)
     request.httpMethod = "GET"

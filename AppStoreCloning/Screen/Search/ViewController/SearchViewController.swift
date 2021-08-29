@@ -7,15 +7,14 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 class SearchViewController: UIViewController {
     
     // MARK: Variable
     
-    let searchViewModel = SearchViewModel()
-    let disposeBag = DisposeBag()
-    let testLabel = UILabel()
+    private let searchViewModel = SearchViewModel()
+    private let disposeBag = DisposeBag()
+    private let testLabel = UILabel()
 
     // MARK: Life Cycle
     
@@ -23,6 +22,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         searchViewModel.fetchSearchResult()
         setLayout()
+        setProperty()
         bindUI()
     }
     
@@ -43,9 +43,12 @@ class SearchViewController: UIViewController {
         let leadingConstraint = testLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16)
         let topConstarint = testLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 50)
         testLabel.translatesAutoresizingMaskIntoConstraints = false
-        testLabel.numberOfLines = 0
         leadingConstraint.isActive = true
         topConstarint.isActive = true
+    }
+    
+    func setProperty() {
+        testLabel.numberOfLines = 0
     }
 }
 

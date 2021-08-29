@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 
 class SearchViewModel: ViewModelType {
+    
     struct Input {}
     struct Output {
         let searchResult = BehaviorRelay<SearchResult>(value: SearchResult(resultCount: 0, results: []))
@@ -18,8 +19,8 @@ class SearchViewModel: ViewModelType {
     var input: Input
     var output: Output
     
-    let service = APIService.shared
-    var disposeBag = DisposeBag()
+    private let service = APIService()
+    private var disposeBag = DisposeBag()
     
     init() {
         self.input = Input()
@@ -28,7 +29,7 @@ class SearchViewModel: ViewModelType {
     
     func fetchSearchResult() {
         do {
-            try service.getSearchResult().subscribe(
+            try service.getSearchResult(term: "카카오톡", country: "kr", media: "software").subscribe(
                 onNext: { [weak self] in
                     self?.output.searchResult.accept($0)
                 },
@@ -39,7 +40,7 @@ class SearchViewModel: ViewModelType {
                     print("Completed event.")
                 }).disposed(by: disposeBag)
         }
-        catch { }
+        catch { print("catch error") }
     }
     
 }

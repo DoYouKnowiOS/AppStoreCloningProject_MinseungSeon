@@ -45,6 +45,8 @@ public class RequestObservable {
                         //MARK: observer onNext event
                         observer.onError(error)
                     }
+                } else {
+                    print("httpResponse nil!") // if let 옵셔널 언래핑에 대해서도 처리
                 }
                 //MARK: observer onCompleted event
                 observer.onCompleted()
