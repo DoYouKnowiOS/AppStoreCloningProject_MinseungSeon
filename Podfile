@@ -8,5 +8,5 @@ target 'AppStoreCloning' do
   # Pods for AppStoreCloning
   pod "RxSwift"
   pod "RxCocoa"
-
+  pod "RxDataSources"
 end

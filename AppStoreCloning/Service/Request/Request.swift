@@ -29,27 +29,29 @@ public class RequestObservable {
             //MARK: create URLSession dataTask
             
             let task = self.urlSession.dataTask(with: request) { (data, response, error) in
-                if let httpResponse = response as? HTTPURLResponse {
-                    let statusCode = httpResponse.statusCode
-                    do {
-                        let _data = data ?? Data()
-                        if (200...399).contains(statusCode) {
-                            let objs = try self.jsonDecoder.decode(ItemModel.self, from: _data)
+                DispatchQueue.main.async {
+                    if let httpResponse = response as? HTTPURLResponse {
+                        let statusCode = httpResponse.statusCode
+                        do {
+                            let _data = data ?? Data()
+                            if (200...399).contains(statusCode) {
+                                let objs = try self.jsonDecoder.decode(ItemModel.self, from: _data)
+                                //MARK: observer onNext event
+                                observer.onNext(objs)
+                            }
+                            else {
+                                observer.onError(error!)
+                            }
+                        } catch {
                             //MARK: observer onNext event
-                            observer.onNext(objs)
+                            observer.onError(error)
                         }
-                        else {
-                            observer.onError(error!)
-                        }
-                    } catch {
-                        //MARK: observer onNext event
-                        observer.onError(error)
+                    } else {
+                        print("httpResponse nil!") // if let 옵셔널 언래핑에 대해서도 처리
                     }
-                } else {
-                    print("httpResponse nil!") // if let 옵셔널 언래핑에 대해서도 처리
+                    //MARK: observer onCompleted event
+                    observer.onCompleted()
                 }
-                //MARK: observer onCompleted event
-                observer.onCompleted()
             }
             task.resume()
             //MARK: return our disposable
